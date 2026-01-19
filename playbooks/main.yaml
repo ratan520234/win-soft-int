@@ -21,7 +21,6 @@
     - name: Install the Visual C thingy
       ansible.windows.win_package:
         path: C:\temp\ChromeStandaloneSetup64.exe
-        product_id: 'chrome'
         arguments: /qn /norestart
         state: present
     - name: Verify Chrome installation
