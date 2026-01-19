@@ -21,5 +21,5 @@
     - name: Install the Visual C thingy
       ansible.windows.win_package:
         path: C:\temp\ChromeStandaloneSetup64.exe
-        arguments: /qn /norestart
+        arguments: '/silent /install'
         state: present
