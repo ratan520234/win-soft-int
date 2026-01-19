@@ -2,7 +2,6 @@
 - name: Sample Linux ping playbook
   hosts: winservers
   gather_facts: no
-
   tasks:
     - name: winping module result
       ansible.windows.win_ping:
@@ -25,7 +24,6 @@
         "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
       register: chrome_version
       changed_when: false
-
     - name: Show Chrome version
       ansible.windows.win_debug:
         var: chrome_version.stdout
