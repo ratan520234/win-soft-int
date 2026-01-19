@@ -8,8 +8,8 @@
         src: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
         dest: C:\temp
       vars:
-        ansible_become_user: administrator
-        ansible_become_password: P@ssw0rd
+        ansible_become_user: ratan
+        ansible_become_password: 135790135790
     - name: Install the Visual C thingy
       ansible.windows.win_package:
       path: C:\temp\ChromeStandaloneSetup64.exe
