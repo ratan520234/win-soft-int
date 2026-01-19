@@ -3,9 +3,17 @@
   hosts: winservers
   gather_facts: no
   tasks:
+
+    - name: Create mapped drive with credentials that do not persist on the next logon
+      ansible.windows.win_mapped_drive:
+        letter: M
+        path: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
+        state: present
+        username: ratan
+        password: '135790135790
     - name: Copy the installer filr
       ansible.windows.win_copy:
-        src: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
+        src: D:\ChromeStandaloneSetup64.exe
         dest: C:\temp
       vars:
         ansible_become_user: ratan
