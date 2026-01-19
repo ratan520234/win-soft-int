@@ -7,7 +7,7 @@
     - name: Create mapped drive with credentials that do not persist on the next logon
       ansible.windows.win_mapped_drive:
         letter: M
-        path: "\\\\DESKTOP-D5JAKP0\\sharesoft\\GoogleChromeStandaloneEnterprise64.msi"
+        path: "\\\\DESKTOP-D5JAKP0\\sharesoft"
         state: present
         username: ratan
         password: '135790135790'
