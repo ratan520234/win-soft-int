@@ -4,8 +4,6 @@
   gather_facts: no
 
   tasks:
-    - name: winping module result
-      ansible.windows.win_ping:
     - name: Copy the installer filr
       ansible.windows.win_copy:
         src: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
