@@ -5,6 +5,6 @@
   tasks:
     - name: Install the Visual C thingy
       win_package:
-        path: "C:/temp/GoogleChromeStandaloneEnterprise64.msi"
+        path: "C:\\temp\\GoogleChromeStandaloneEnterprise64.msi"
         arguments: '/passive /norestart'
         state: present
