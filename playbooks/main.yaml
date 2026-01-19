@@ -20,10 +20,10 @@
         ansible_become_password: 135790135790
     - name: Install the Visual C thingy
       ansible.windows.win_package:
-      path: C:\temp\ChromeStandaloneSetup64.exe
-      product_id: 'chrome'
-      arguments: /qn /norestart
-      state: present
+        path: C:\temp\ChromeStandaloneSetup64.exe
+        product_id: 'chrome'
+        arguments: /qn /norestart
+        state: present
     - name: Verify Chrome installation
       ansible.windows.win_command: |
         "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
