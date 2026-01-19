@@ -13,13 +13,13 @@
         password: '135790135790'
     - name: Copy the installer filr
       ansible.windows.win_copy:
-        src: "M:\GoogleChromeStandaloneEnterprise64.msi"
-        dest: "C:\temp\GoogleChromeStandaloneEnterprise64.msi"
+        src: "M:\\GoogleChromeStandaloneEnterprise64.msi"
+        dest: "C:\\temp\\GoogleChromeStandaloneEnterprise64.msi"
       vars:
         ansible_become_user: ratan
         ansible_become_password: 135790135790
     - name: Install the Visual C thingy
       ansible.windows.win_package:
-        path: "C:\temp\GoogleChromeStandaloneEnterprise64.msi"
+        path: "C:\\temp\\GoogleChromeStandaloneEnterprise64.msi"
         arguments: '/passive /norestart'
         state: present
