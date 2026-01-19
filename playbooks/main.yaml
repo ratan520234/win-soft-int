@@ -7,14 +7,14 @@
     - name: Create mapped drive with credentials that do not persist on the next logon
       ansible.windows.win_mapped_drive:
         letter: M
-        path: \\DESKTOP-D5JAKP0\sharesoft\GoogleChromeStandaloneEnterprise64.msi
+        path: "\\DESKTOP-D5JAKP0\sharesoft\GoogleChromeStandaloneEnterprise64.msi"
         state: present
         username: ratan
-        password: '135790135790
+        password: '135790135790'
     - name: Copy the installer filr
       ansible.windows.win_copy:
-        src: D:\GoogleChromeStandaloneEnterprise64.msi
-        dest: C:\temp
+        src: "M:\GoogleChromeStandaloneEnterprise64.msi"
+        dest: "C:\temp\GoogleChromeStandaloneEnterprise64.msi"
       vars:
         ansible_become_user: ratan
         ansible_become_password: 135790135790
