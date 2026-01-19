@@ -7,19 +7,19 @@
     - name: Create mapped drive with credentials that do not persist on the next logon
       win_mapped_drive:
         letter: M
-        path: "\\\\DESKTOP-D5JAKP0\\sharesoft"
+        path: "//DESKTOP-D5JAKP0/sharesoft"
         state: present
         username: ratan
         password: '135790135790'
     - name: Copy the installer filr
       win_copy:
-        src: "M:\\GoogleChromeStandaloneEnterprise64.msi"
-        dest: "C:\\temp\\GoogleChromeStandaloneEnterprise64.msi"
+        src: "M:/GoogleChromeStandaloneEnterprise64.msi"
+        dest: "C:/temp/GoogleChromeStandaloneEnterprise64.msi"
       vars:
         ansible_become_user: ratan
         ansible_become_password: 135790135790
     - name: Install the Visual C thingy
       win_package:
-        path: "C:\\temp\\GoogleChromeStandaloneEnterprise64.msi"
+        path: "C:/temp/GoogleChromeStandaloneEnterprise64.msi"
         arguments: '/passive /norestart'
         state: present
