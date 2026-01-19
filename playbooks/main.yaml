@@ -6,7 +6,7 @@
     - name: Copy the installer filr
       ansible.windows.win_copy:
         src: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
-        dest: C:\temp\
+        dest: C:\temp
       vars:
         ansible_become_user: administrator
         ansible_become_password: P@ssw0rd
