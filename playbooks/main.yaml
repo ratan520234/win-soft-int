@@ -23,11 +23,3 @@
         path: C:\temp\ChromeStandaloneSetup64.exe
         arguments: /qn /norestart
         state: present
-    - name: Verify Chrome installation
-      ansible.windows.win_command: |
-        "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
-      register: chrome_version
-      changed_when: false
-    - name: Show Chrome version
-      ansible.windows.win_debug:
-        var: chrome_version.stdout
