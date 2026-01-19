@@ -1,0 +1,31 @@
+---
+- name: Sample Linux ping playbook
+  hosts: winservers
+  gather_facts: no
+
+  tasks:
+    - name: winping module result
+      ansible.windows.win_ping:
+    - name: Copy the installer filr
+      ansible.windows.win_copy:
+        src: \\DESKTOP-D5JAKP0\sharesoft\ChromeStandaloneSetup64.exe
+        dest: C:\temp\
+      vars:
+        ansible_become_user: administrator
+        ansible_become_password: P@ssw0rd
+      ansible.builtin.ping:
+    - name: Install the Visual C thingy
+      ansible.windows.win_package:
+      path: C:\temp\ChromeStandaloneSetup64.exe
+      product_id: 'chrome'
+      arguments: /qn /norestart
+      state: present
+    - name: Verify Chrome installation
+      ansible.windows.win_command: |
+        "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
+      register: chrome_version
+      changed_when: false
+
+    - name: Show Chrome version
+      ansible.windows.win_debug:
+        var: chrome_version.stdout
