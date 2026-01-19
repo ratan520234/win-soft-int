@@ -1,6 +1,5 @@
 all:
   children:
-
     winservers:
       hosts:
         WIN-194FK0KN6C4:
