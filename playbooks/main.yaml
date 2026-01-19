@@ -5,7 +5,7 @@
   tasks:
 
     - name: Create mapped drive with credentials that do not persist on the next logon
-      ansible.windows.win_mapped_drive:
+      win_mapped_drive:
         letter: M
         path: "\\\\DESKTOP-D5JAKP0\\sharesoft"
         state: present
