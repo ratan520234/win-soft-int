@@ -1,4 +1,7 @@
 ---
+
+collections:
+  - name: ansible.windows
 - name: Sample Linux ping playbook
   hosts: winservers
   gather_facts: no
